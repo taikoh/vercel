@@ -50,7 +50,8 @@ router.post('/', ensureAuth, jsonParser, async function (req, res, next) {
 	res.status(200).json({ success: true, message: "Guitar added successfully.", newGuitar });
 });
 
-router.post("/:id", ensureAuth, jsonParser, async (req, res, next) => {
+// DELETE new Guitar
+router.delete("/:id", ensureAuth, jsonParser, async (req, res, next) => {
     await guitarService.delete(req.params.id);
     res.status(200).json({ success: true, message: "Guitar deleted successfully." })
 })
