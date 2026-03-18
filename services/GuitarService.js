@@ -33,7 +33,7 @@ class GuitarService {
 	}
 
 	async delete(guitarId) {
-		const guitar = await this.Guitar.findOne({
+		const guitar = await this.Guitar.destroy({
 			where: {
 				id: guitarId,
 			}
